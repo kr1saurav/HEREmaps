@@ -1,16 +1,11 @@
-#' Attempt to geocode a string
-#'
-#' Enter a string and if found, the latitude and longitude is returned using the HERE API
-#' @param search A string to search
-#' @param App_id App_id to use the production HERE API. Get one here... http://developer.here.com/get-started. If left blank, will default to demo key with an unknown usage limit.
-#' @param App_code App_code to use the production HERE API. Get one here... http://developer.here.com/get-started. If left blank, will default to demo key with an unknown usage limit.
-#' @return A list containing Latitude and Longitude if found, NA otherwise
-#' @keywords geocode
-#' @export
-#' @examples
-#' geocodeHERE_simple("chicago")
-#' geocodeHERE_simple("wrigley field chicago IL")
-#' geocodeHERE_simple("233 S Wacker Dr, Chicago, IL 60606")
+#Calculate road distance between two points
+#inputs are geolocations
+#to get geolocatiojn from adress/city/country use geolocationHERE
+#Usage - 
+#distanceHERE("41.9798","-87.8801","41.9043","-87.9216")
+#Outpur distance is in meters
+
+
 distanceHERE <- function(fromLat, fromLong,toLat, toLong, App_id="", App_code=""){
   if(!is.character(App_id)){stop("'App_id' must be a character string")}
   if(!is.character(App_code)){stop("'App_code' must be a character string")}
